@@ -1,0 +1,73 @@
+.hero-container {
+  width: 100vw;
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .wrapper {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("./store.jpg") no-repeat center / cover;
+    .intro {
+      text-align: center;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      h1 {
+        margin-top: 10rem;
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.7rem;
+        margin-top: 1rem;
+      }
+      button {
+        padding: 5px;
+        margin-top: 2rem;
+        width: 8rem;
+        height: 3rem;
+        border-radius: 5px;
+        &:hover {
+          background: black;
+        }
+        a {
+          text-decoration: none;
+          &:hover {
+            cursor: pointer;
+            background: black;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    .wrapper {
+      width: 80%;
+      .intro {
+        h1 {
+          margin-top: 20rem;
+          font-size: 4rem;
+        }
+        p {
+          font-size: 2rem;
+        }
+        button {
+          width: 10rem;
+          height: 3rem;
+          font-size: 1.7rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,158 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 3rem;
+  z-index: 2;
+  color: white;
+  background-color: rgb(114, 114, 114);
+  .logo {
+    .logo-link {
+      color: white;
+      text-decoration: none;
+      h1 {
+        margin-left: 2rem;
+        font-size: 1.5rem;
+        &:hover {
+          color: cyan;
+        }
+      }
+    }
+  }
+  .hamburger {
+    .icon {
+      i {
+        padding-right: 1rem;
+        cursor: pointer;
+      }
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      position: absolute;
+      left: -100%;
+      top: 100%;
+      background-color: rgb(114, 114, 114);
+      a {
+        font-size: 2rem;
+        text-decoration: none;
+        color: white;
+        &:hover {
+          color: cyan;
+        }
+      }
+      .category {
+        text-align: center;
+        font-size: 2rem;
+        &:hover {
+          color: cyan;
+        }
+        .dd-icon {
+          font-size: 1.3rem;
+          margin-left: 5px;
+        }
+
+        .submenu {
+          background-color: rgb(114, 114, 114);
+          display: none;
+          a {
+            font-size: 1.3rem;
+            width: 100%;
+            color: white;
+            &:hover {
+              background: cyan;
+              color: black;
+            }
+          }
+        }
+        .submenu.show {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+
+    .links.show {
+      animation: links-animate 0.5s linear forwards;
+    }
+
+    @keyframes links-animate {
+      from {
+        left: -100%;
+        opacity: 0;
+      }
+      to {
+        left: 0;
+        opacity: 1;
+      }
+    }
+  }
+  .cart {
+    button {
+      margin-right: 2rem;
+      width: 3.2rem;
+      height: 2rem;
+      position: relative;
+      &:hover {
+        cursor: pointer;
+        background: cyan;
+      }
+      i {
+        font-size: 1rem;
+        padding-right: 4px;
+      }
+      span {
+        background-color: rgb(248, 172, 86);
+        padding: 2px 4px;
+        border-radius: 50%;
+        font-size: 0.7rem;
+        position: absolute;
+        left: 55%;
+        top: 5%;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  nav {
+    .logo {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    .hamburger {
+      .icon {
+        display: none;
+      }
+      .links {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        a {
+          font-size: 1.3rem;
+          margin: 0 1rem;
+        }
+        .category {
+          position: relative;
+          font-size: 1.3rem;
+          .submenu {
+            position: absolute;
+            left: 0;
+            top: 150%;
+          }
+        }
+      }
+    }
+  }
+}

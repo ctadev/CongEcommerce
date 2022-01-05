@@ -1,0 +1,168 @@
+.cart-container {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: animateCart 0.5s linear forwards;
+  .empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    background: rgb(37, 37, 37);
+    color: white;
+    position: relative;
+    .closeButton {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 2rem;
+      width: 2rem;
+      border: none;
+      background: black;
+      color: white;
+      &:hover {
+        cursor: pointer;
+        background: white;
+        color: black;
+      }
+    }
+  }
+  .container {
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    overflow-y: auto;
+    background: rgb(252, 252, 252);
+    position: relative;
+    padding: 0 1rem;
+    h1 {
+      margin: 1rem 0;
+    }
+    .closeButton {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 2rem;
+      width: 2rem;
+      border: none;
+      background: black;
+      color: white;
+      &:hover {
+        cursor: pointer;
+        background: white;
+        color: black;
+        border: black 1px solid;
+      }
+    }
+    .orders-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+      .cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 250px;
+        width: 200px;
+        background: rgb(255, 255, 255);
+        border: 1px black solid;
+        padding: 1rem;
+        border-radius: 5px;
+        .quantity-container {
+          display: flex;
+          gap: 1rem;
+          button {
+            padding: 3px;
+            width: 2rem;
+          }
+          p {
+            padding-top: 0.7rem;
+          }
+        }
+        h2 {
+          font-size: 1rem;
+          white-space: nowrap;
+          text-align: center;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          width: 100%;
+        }
+        img {
+          height: 40%;
+          width: 100%;
+          object-fit: contain;
+          margin: 0.5rem 0;
+        }
+        p {
+          text-align: center;
+        }
+        button {
+          padding: 2px;
+          width: 4rem;
+          margin-top: 0.5rem;
+          background: white;
+          color: black;
+          &:hover {
+            color: white;
+            background: black;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .orders-receipt {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 4rem;
+      h2 {
+        text-align: center;
+        color: orangered;
+      }
+      button {
+        height: 2rem;
+        width: 8rem;
+        margin-bottom: 2rem;
+        font-weight: bolder;
+        margin-top: 0.5rem;
+        background: black;
+        color: white;
+        border: none;
+        &:hover {
+          color: rgb(250, 121, 0);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  @keyframes animateCart {
+    from {
+      right: -100%;
+      opacity: 0;
+    }
+    to {
+      right: 0;
+      opacity: 1;
+    }
+  }
+}
+
+.cart-container.hide {
+  display: none;
+}
