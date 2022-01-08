@@ -42,7 +42,7 @@ function Products() {
       ) : (
         <section className="loading">
           <h1>
-            <i class="fas fa-spinner"></i>
+            <i className="fas fa-spinner"></i>
           </h1>
         </section>
       )}

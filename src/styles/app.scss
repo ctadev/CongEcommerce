@@ -11,6 +11,21 @@ html {
 
 .App {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Vujahday Script", cursive;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+}
+
+button {
+  font-family: "Nunito", sans-serif;
 }
 
 @import "./nav.scss";

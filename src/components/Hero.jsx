@@ -1,17 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import data from "../components/store/carousel";
 
 function Hero() {
+  const [x, setX] = useState(0);
+  const goLeft = () => {
+    x === -200 ? setX(0) : setX(x - 100);
+  };
+
+  const goRight = () => {
+    x === -100 * (data.length - 1) ? setX(0) : setX(x - 100);
+  };
   return (
     <main className="hero-container" id="home">
-      <section className="wrapper">
-        <div className="intro">
-          <h1>New Year's Sales</h1>
-          <p>Sales up to 45% Off, order now online for Free Delivery. </p>
-          <button>
-            <a href="#products">Shop Now!</a>
+      {data.map((item) => (
+        <div
+          key={item.id}
+          className="img-container"
+          style={{ transform: `translateX(${x}%)` }}
+        >
+          <img src={item.image} alt={item.name} />
+          <h1>{item.title}</h1>
+          <div className="overlay"></div>
+          <button onClick={() => goLeft()} className="left">
+            <i className="fas fa-chevron-left"></i>
+          </button>
+          <button onClick={() => goRight()} className="right">
+            <i className="fas fa-chevron-right"></i>
           </button>
         </div>
-      </section>
+      ))}
     </main>
   );
 }
