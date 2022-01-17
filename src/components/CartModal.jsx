@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleModal } from "./redux/modalSlice";
 import { removeItem, decreaseCart, addCart, getTotal } from "./redux/cart";
+import StripeCheckoutButton from "./stripeButton";
 
 function CartModal() {
   const dispatch = useDispatch();
@@ -64,7 +65,7 @@ function CartModal() {
           </section>
           <section className="orders-receipt">
             <h2>Subtotal: ${Math.round(cart.cartTotal * 100) / 100}</h2>
-            <button>CHECKOUT</button>
+              <StripeCheckoutButton price={Math.round(cart.cartTotal * 100) / 100}/>
           </section>
         </div>
       )}

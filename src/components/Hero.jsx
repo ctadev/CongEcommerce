@@ -8,7 +8,7 @@ function Hero() {
   };
 
   const goRight = () => {
-    x === -100 * (data.length - 1) ? setX(0) : setX(x - 100);
+    x === 0 ? setX(-200) : setX(x + 100);
   };
   return (
     <main className="hero-container" id="home">
